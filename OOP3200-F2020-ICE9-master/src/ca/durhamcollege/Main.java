@@ -1,6 +1,7 @@
 package ca.durhamcollege;
 
 import java.util.Scanner;
+import java.util.Vector;
 
 // driver class
 public class Main {
@@ -8,7 +9,13 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner keyboard = new Scanner(System.in);
-
+        int numOfPoints = 4;
+        Vector<Vector2D> points = new Vector<Vector2D>();
+        for (int i = 0; i < numOfPoints; i++)
+        {
+            points.add(Vector2D.zero());
+        }
+        points[0];
 
         Vector2D point1 = new Vector2D();
         System.out.print("Enter the first point (x, y): ");
@@ -40,9 +47,19 @@ public class Main {
         System.out.println("--------------------------------------------------------------\n" );
          */
 
-        Vector2D point3 = RandomVector.createVector2D(point1, point2);
+        Vector2D point3 = RandomVector.Instance().createVector2D(point1, point2);
         System.out.println("\n------------------------------------------------------------------" );
         System.out.println("Your new Vector is " + point3.toString() + " for the third point." );
+        System.out.println("------------------------------------------------------------------\n" );
+
+        Vector2D point4 = RandomVector.Instance().createVector2D(point2, point3);
+        System.out.println("\n------------------------------------------------------------------" );
+        System.out.println("Your new Vector is " + point4.toString() + " for the fourth point." );
+        System.out.println("------------------------------------------------------------------\n" );
+
+        Vector2D point5 = RandomVector.Instance().createVector2D(point3, point4);
+        System.out.println("\n------------------------------------------------------------------" );
+        System.out.println("Your new Vector is " + point5.toString() + " for the fifth point." );
         System.out.println("------------------------------------------------------------------\n" );
 
     }
